@@ -40,7 +40,7 @@ function Header() {
           } md:flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 list-none text-[0.9rem] absolute md:static top-[70px] left-0 w-full md:w-auto bg-[#0f172a] md:bg-transparent border-b md:border-none border-[#1e293b] p-5 md:p-0 shadow-xl md:shadow-none`}>
           <li className="w-full md:w-auto">
             <NavLink to="/" onClick={() => setNavActive(false)} className={navLinkClass}>
-              Marketplace
+              Catalog
             </NavLink>
           </li>
 

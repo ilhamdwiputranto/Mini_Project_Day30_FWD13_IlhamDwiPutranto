@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import Hero from "../components/Hero";
 import { getAllProducts } from "../services/api";
 
+// Halaman utama (Beranda) yang menampilkan banner hero dan daftar katalog produk.
+
 function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Mengambil seluruh daftar produk saat komponen pertama kali di-mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -19,6 +22,7 @@ function Home() {
         setLoading(false);
       }
     };
+
     fetchProducts();
   }, []);
 
@@ -30,9 +34,11 @@ function Home() {
         activeCategory="all"
       />
 
+      {/* Conditional rendering berdasarkan status request API */}
       {loading && <p>Memuat produk...</p>}
       {error && <p className="text-rose-600">{error}</p>}
 
+      {/* Grid daftar produk */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
         {products.map((product) => (
           <div key={product.id} className="bg-white border border-slate-200 rounded-xl p-4">
