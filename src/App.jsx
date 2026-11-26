@@ -3,6 +3,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <Header />
-          <Routes>{/* route */}</Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
           <Footer />
         </CartProvider>
       </AuthProvider>
